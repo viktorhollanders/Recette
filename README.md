@@ -11,11 +11,8 @@ Viktor Hollanders
 - pnpm v8+
 
 ## Getting Started
-Install dependencies using pnpm:
-```bash
-pnpm install
-```
 
+### Set up the API
 Set up the accompanying API with the following commands.
 
 Run the setup script:
@@ -41,13 +38,18 @@ To test if the API is serving data run:
 ```bash
 curl http://localhost:3500/recipes
 ```
+### Set up the app
+Install dependencies using pnpm:
+```bash
+pnpm install
+```
 
-Then run the development server:
+Run the development server:
 ```bash
 pnpm run dev
 ```
 
-Open [http://localhost:5173/](http://localhost:5173/) in your browser to see the result.
+Open [http://localhost:5173/](http://localhost:5173/) in your browser to view the app.
 
 ## Tech Stack
 - **Language:** TypeScript
