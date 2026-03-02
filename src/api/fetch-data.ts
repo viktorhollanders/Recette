@@ -1,10 +1,22 @@
 export async function fetchData() {
-  const url = "http://localhost:3500/recipes";
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
+  const recipes = "http://localhost:3500/recipes";
+  const recipeTypes = "http://localhost:3500/recipes/recipeTypes";
+
+  const [recipesRed, recipeTypesRed] = await Promise.all([
+    fetch(recipes),
+    fetch(recipeTypes),
+  ]);
+
+  if (!recipesRed.ok) {
+    throw new Error(`Response status: ${recipesRed.status}`);
   }
 
-  const result = await response.json();
-  return result;
+  if (!recipeTypesRed.ok) {
+    throw new Error(`Response status: ${recipeTypesRed.status}`);
+  }
+
+  const recipesData = await recipesRed.json();
+  const recipeTypesData = await recipeTypesRed.json();
+
+  return { recipesData, recipeTypesData };
 }
