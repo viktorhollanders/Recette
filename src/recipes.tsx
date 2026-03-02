@@ -1,7 +1,5 @@
+import { Header } from "@/components/header";
+
 export default function Recipes() {
-  return (
-    <>
-      <p>Hello World</p>
-    </>
-  );
+  return <Header />;
 }
