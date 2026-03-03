@@ -1,3 +1,3 @@
-export type { recipe } from "./recipe";
-export type { recipeTags } from "./recipeTags";
-export type { recipeType } from "./recipeType";
+export type { Recipe } from "./recipe";
+export type { RecipeTags } from "./recipeTags";
+export type { RecipeType } from "./recipeType";

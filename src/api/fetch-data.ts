@@ -1,10 +1,10 @@
 export async function fetchData() {
-  const recipes = "http://localhost:3500/recipes";
-  const recipeTypes = "http://localhost:3500/recipes/recipeTypes";
+  const recipesUrl = "http://localhost:3500/recipes";
+  const recipeTypesUrl = "http://localhost:3500/recipes/recipeTypes";
 
   const [recipesRed, recipeTypesRed] = await Promise.all([
-    fetch(recipes),
-    fetch(recipeTypes),
+    fetch(recipesUrl),
+    fetch(recipeTypesUrl),
   ]);
 
   if (!recipesRed.ok) {
@@ -15,8 +15,8 @@ export async function fetchData() {
     throw new Error(`Response status: ${recipeTypesRed.status}`);
   }
 
-  const recipesData = await recipesRed.json();
-  const recipeTypesData = await recipeTypesRed.json();
+  const recipes = await recipesRed.json();
+  const recipeTypes = await recipeTypesRed.json();
 
-  return { recipesData, recipeTypesData };
+  return { recipes, recipeTypes };
 }

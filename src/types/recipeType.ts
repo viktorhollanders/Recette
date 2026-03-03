@@ -1,4 +1,4 @@
-export interface recipeType {
+export interface RecipeType {
   _id: string;
   name: string;
 }

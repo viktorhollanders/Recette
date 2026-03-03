@@ -1,9 +1,9 @@
-import type { recipeTags } from "./recipeTags";
+import type { RecipeTags } from "./recipeTags";
 
-export interface recipe {
+export interface Recipe {
   _id: string;
   title: string;
   recipeType: string;
   image: string;
-  tags: recipeTags[];
+  tags: RecipeTags[];
 }
