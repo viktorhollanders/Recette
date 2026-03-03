@@ -1,4 +1,4 @@
-import type { RecipeTags } from "./recipeTags";
+import type { RecipeTags } from "./recipe-tags";
 
 export interface Recipe {
   _id: string;

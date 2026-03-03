@@ -1,4 +1,4 @@
-import { useRecipe } from "@/context/hooks/use-recipe";
+import { useRecipe } from "@/contexts/hooks/use-recipe";
 import type { RecipeType } from "@/types";
 
 export function Button({ type }: { type: RecipeType }) {

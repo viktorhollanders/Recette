@@ -1,11 +1,11 @@
 import { Search } from "lucide-react";
-import { useRecipe } from "@/context/hooks/use-recipe";
+import { useRecipe } from "@/contexts/hooks/use-recipe";
 
 export function SearchBar() {
   const { searchRecipes } = useRecipe();
 
   return (
-    <div className="bg-brand-white w-[750px] p-6 rounded-4xl flex gap-2">
+    <div className="bg-brand-white w-[350px] xl:w-[750px] p-6 rounded-4xl flex gap-2">
       <Search />
       <input
         type="text"

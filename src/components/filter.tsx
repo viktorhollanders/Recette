@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { useRecipe } from "@/context/hooks/use-recipe";
+import { useRecipe } from "@/contexts/hooks/use-recipe";
 
 export function Filter() {
   const { recipeTypes, filteredRecipes } = useRecipe();

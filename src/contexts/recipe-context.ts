@@ -8,6 +8,7 @@ interface RecipeContextType {
   filterRecipes: (type: RecipeType) => void;
   searchRecipes: (query: string) => void;
   activeFilter: RecipeType | null;
+  isLoading: boolean;
 }
 
 export const RecipeContext = createContext<RecipeContextType | null>(null);

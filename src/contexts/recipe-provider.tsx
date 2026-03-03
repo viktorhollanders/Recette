@@ -1,7 +1,7 @@
 import type { Recipe, RecipeType } from "@/types";
 import { useState, useEffect, type ReactNode, useMemo } from "react";
 import { RecipeContext } from "./recipe-context";
-import { fetchData } from "@/api/fetch-data";
+import { fetchRecipes, fetchRecipeTypes } from "@/api/fetch-data";
 
 interface RecipeProviderProps {
   children: ReactNode;
@@ -12,12 +12,15 @@ export function RecipeProvider(props: RecipeProviderProps) {
   const [recipeTypes, setRecipeTypes] = useState<RecipeType[]>([]);
   const [activeFilter, setActiveFilter] = useState<RecipeType | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function getData() {
-      const { recipes, recipeTypes } = await fetchData();
+      const recipes = await fetchRecipes();
+      const recipeTypes = await fetchRecipeTypes();
       setRecipes(recipes);
       setRecipeTypes(recipeTypes);
+      setIsLoading(false);
     }
     getData();
   }, []);
@@ -52,6 +55,7 @@ export function RecipeProvider(props: RecipeProviderProps) {
         filterRecipes,
         searchRecipes,
         activeFilter,
+        isLoading,
       }}
     >
       {props.children}

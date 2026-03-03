@@ -1,3 +1,4 @@
 export type { Recipe } from "./recipe";
-export type { RecipeTags } from "./recipeTags";
-export type { RecipeType } from "./recipeType";
+export type { RecipeTags } from "./recipe-tags";
+export type { RecipeType } from "./recipe-type";
+export type { RecipeDetails, Step, Items } from "./recipe-details";
